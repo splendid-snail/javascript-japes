@@ -1,0 +1,43 @@
+//clears the console for neatness sake after repeated running! 
+console.clear()
+
+//First we create a pair of arrays - one for lines of five syllables, one for lines of seven. 
+var five = ["i ate a pizza","the palm is wilted", "no true cake was baked", "pizza gave us strength", "the president blows", "fuck paul hollywood", "i killed all the plants", "please rub my feet mate", "terrible times, terrible", "burger's in the bin", "bin's in the burger", "sky strangely florid", "grass oddly livid", "knock but don't unlock"];
+
+var seven = ["as the wind blew in the grass", "dogs, all running, barked and howled", "mary berry baked a cake", "piss fuck bastard, bastard fuck", "blackcurrant and vanilla", "i do not want to eat that", "between the branches, the sun", "just like me, but somehow not", "i never ate a pizza", "our faces against the glass", ];
+
+//next we set two variables that give us the lengths of the arrays 
+var l = five.length;
+
+var m = seven.length;
+
+//next we set two random numbers, one to control each array 
+var random5 = randomNumber5();
+
+var random7 = randomNumber7();
+
+//the following function creates a random number between 0 and the total number of elements in the first array. Note that it uses the array.length to define its upper limit
+function randomNumber5() {
+    return Math.floor(Math.random()*l);} 
+ 
+//this just does the same for the other array 
+function randomNumber7() {
+    return Math.floor(Math.random()*m);}
+
+//finally, the action! this uses the first random number to log an item from the first array to the console 	
+console.log(five[random5]);
+
+//this does the same for the second array and random number 
+console.log(seven[random7]);
+
+//removes the first printed line from the array so it's not repeated
+five.splice(random5,1); 
+
+//this tells the variable l that the first array has a new length 
+var l = five.length;
+
+//this sets the first random number to a new value by calling the function again
+var random5 = randomNumber5();
+
+//now we can log a new random line from the first array, minus line 1. magic! 
+console.log(five[random5]);
