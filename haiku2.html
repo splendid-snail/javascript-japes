@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Cool Coops' Haiku Generator</title>
+</head>
+<body>
+
+  <h1 id="Heading">Cool Coops' Haiku Generator</h1>
+  <p id="p1">
+    ah the internet
+  </p>
+  <p id="p2">
+    so unlike the drifting fog
+  </p>
+
+  <p id="p3">
+    press the button fool
+  </p>
+
+
+<script>
+
+function genHeading(){
+
+var titles = ["Excellent", "Lovely", "Exquisite", "Malodorous", "Turbo", "Scientific", "Wondrous", "Pensive", "Ponderous", "Dreamy", "Sparkling", "Marvellous", "Celestial", "Sublime", "Radiant", "Edenic"];
+
+var names = ["Sam's", "Malc's", "Coops'", "Joan's", "Zara's", "Ahmet's", "Bo's", "Shiran's", "Boab's", "Yusuf's", "Sarah's", "Jo's", "Tom's", "Andrea's", "Zeinab's", "Ben's", "Kenny's", "Matt's", "Arif's"];
+
+document.getElementById("Heading").innerHTML = titles[Math.floor(Math.random() * titles.length)] + " " + names[Math.floor(Math.random() * names.length)] + " Haiku Generator";
+
+
+}
+
+
+function genHaiku() {
+
+var five = ["i ate a pizza","the palm is wilted", "no true cake was baked", "pizza gave us strength", "the president blows", "fuck paul hollywood", "i killed all the plants", "please rub my feet mate", "terrible times, terrible", "we all love zeinab", "burger's in the bin", "bin's in the burger", "how does this measure", "it surely can't be", "sky strangely florid", "grass oddly livid", "knock but don't unlock"];
+
+var seven = ["as the wind blew in the grass", "dogs, all running, barked and howled", "mary berry baked a cake", "a vision of charm and grace", "piss fuck bastard, bastard fuck", "blackcurrant and vanilla", "i do not want to eat that", "between the branches, the sun", "just like me, but somehow not", "i never ate a pizza", "our faces against the glass"];
+
+var l = five.length;
+
+var m = seven.length;
+
+var random5 = randomNumber5();
+
+var random7 = randomNumber7();
+
+function randomNumber5() {
+    return Math.floor(Math.random()*l);}
+
+function randomNumber7() {
+    return Math.floor(Math.random()*m);}
+
+document.getElementById("p1").innerHTML = five[random5];
+
+document.getElementById("p2").innerHTML = seven[random7];
+
+five.splice(random5,1);
+
+var l = five.length;
+
+var random5 = randomNumber5();
+
+document.getElementById("p3").innerHTML = five[random5];
+}
+
+
+</script>
+
+<button type="button" onclick="genHaiku(); genHeading();">%% gen %%</button>
+
+
+</body>
+</html>
